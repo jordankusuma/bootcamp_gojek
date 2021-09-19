@@ -22,21 +22,26 @@ public class NewCell {
     //Any live cell with more than three live neighbours dies, as if by overpopulation.
     //Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
     public int checkAliveCells(int length, int width){
+        int originLength = length;
+        int originWidth = width;
         int total = 0;
         for (int i = -1;i <= 1;i++){
             length += i;
-            for (int j = -1;j<=1;j++){
+            for (int j = -1;j<=1;j++) {
                 width += i;
-                if (length < this.length && width < this.width && length >= 0 && width >= 0){
+                if (length < this.length && width < this.width && length >= 0 && width >= 0) {
                     if (getStatusCell(this.array[length][width]))
-                      total++;
+                        total++;
                 }
+                width = originWidth;
             }
+            length = originLength;
         }
+        return total;
     }
 
     public int getNextCell(){
-        
+
     }
 
     public int getLength() {
