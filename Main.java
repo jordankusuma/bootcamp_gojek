@@ -4,43 +4,19 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        NewCell cell = new NewCell(4, 4);
-        Conway conway = new Conway(cell, 4);
-        int[][] array = new int[cell.getLength()][cell.getWidth()];
-        int[][] total = new int[cell.getLength()][cell.getWidth()];
-        int[][] answer = new int[cell.getLength()][cell.getWidth()];
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter length, width, turn : ");
+        int length=sc.nextInt();
+        int width=sc.nextInt();
+        int turn=sc.nextInt();
 
+        NewCell cell = new NewCell(length, width);
+        Conway conway = new Conway(cell, turn);
+
+        //input the array
         conway.setArrayValues(cell);
 
-        array = conway.getArrayCells(cell);
-
-        for (int i = 0;i<cell.getLength();i++){
-            for (int j = 0;j<cell.getWidth();j++){
-                System.out.print(array[i][j] + " ");
-            }
-            System.out.println("");
-        }
-
-        System.out.println("");
-
-        total = conway.cekAliveTotal(cell);
-
-        for (int i = 0;i<cell.getLength();i++){
-            for (int j = 0;j<cell.getWidth();j++){
-                System.out.print(total[i][j] + " ");
-            }
-            System.out.println("");
-        }
-
-        System.out.println("");
-
-        answer = conway.getNextCellAlive(cell);
-
-        for (int i = 0;i<cell.getLength();i++){
-            for (int j = 0;j<cell.getWidth();j++){
-                System.out.print(answer[i][j] + " ");
-            }
-            System.out.println("");
-        }
+        //run conway game of life based on how many turns
+        conway.getLifeCellForTurn(cell);
     }
 }

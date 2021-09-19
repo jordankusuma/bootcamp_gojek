@@ -48,6 +48,7 @@ public class NewCell {
             }
             System.out.println("");
         }
+        System.out.println("");
     }
 
     public void printAnswer(){
@@ -58,6 +59,7 @@ public class NewCell {
             }
             System.out.println("");
         }
+        System.out.println("");
     }
 
     public int getLength() {

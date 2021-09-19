@@ -45,10 +45,11 @@ public class Conway {
         System.out.println("Print total Alive Neighbours : ");
         for (int i = 0;i<cell.getLength();i++){
             for (int j = 0;j<cell.getWidth();j++){
-                System.out.print(cell.getArrayBasedIndex(i, j) + " ");
+                System.out.print(getTotalBasedIndex(i, j) + " ");
             }
             System.out.println("");
         }
+        System.out.println("");
     }
 
     public int[][] getNextCellAlive(NewCell cell){
