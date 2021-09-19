@@ -8,6 +8,7 @@ public class Main {
         Conway conway = new Conway(cell, 4);
         int[][] array = new int[cell.getLength()][cell.getWidth()];
         int[][] total = new int[cell.getLength()][cell.getWidth()];
+        int[][] answer = new int[cell.getLength()][cell.getWidth()];
 
         conway.setArrayValues(cell);
 
@@ -31,5 +32,15 @@ public class Main {
             System.out.println("");
         }
 
+        System.out.println("");
+
+        answer = conway.getNextCellAlive(cell);
+
+        for (int i = 0;i<cell.getLength();i++){
+            for (int j = 0;j<cell.getWidth();j++){
+                System.out.print(answer[i][j] + " ");
+            }
+            System.out.println("");
+        }
     }
 }

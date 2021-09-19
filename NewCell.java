@@ -60,6 +60,10 @@ public class NewCell {
         return array;
     }
 
+    public int getArrayBasedIndex(int posX, int posY){
+        return this.array[posX][posY];
+    }
+
     public void setArraywithIndex(int posX, int posY, int value) {
         this.array[posX][posY] = value;
     }

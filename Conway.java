@@ -44,16 +44,24 @@ public class Conway {
     public int[][] getNextCellAlive(NewCell cell){
         for (int i = 0;i<cell.getLength();i++){
             for (int j = 0;j<cell.getWidth();j++){
-
+                int total = getTotalBasedIndex(i, j);
+                if (cell.getStatusCell(cell.getArrayBasedIndex(i, j)) && total < 2 || total > 3) {
+                    cell.setAnswerwithIndex(i, j, 0);
+                } else if (!cell.getStatusCell(cell.getArrayBasedIndex(i, j)) && total == 3) {
+                    cell.setAnswerwithIndex(i, j, 1);
+                } else {
+                    cell.setAnswerwithIndex(i, j, cell.getArrayBasedIndex(i, j));
+                }
             }
         }
+        return cell.getAnswer();
     }
 
-    public void getLifeCellForTurn(NewCell cell){
-        for (int i = 0;i<getTurn();i++){
-
-        }
-    }
+//    public void getLifeCellForTurn(NewCell cell){
+//        for (int i = 0;i<getTurn();i++){
+//
+//        }
+//    }
 
     public int[][] getTotal() {
         return this.total;
