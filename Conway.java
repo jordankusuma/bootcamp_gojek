@@ -43,6 +43,10 @@ public class Conway {
         return this.total;
     }
 
+    public int getTotalwithIndex(int posX, int posY){
+        return this.total[posX][posY];
+    }
+
     public void setTotalwithIndex(int posX, int posY, int value) {
         this.total[posX][posY] = value;
     }
