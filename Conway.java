@@ -41,6 +41,16 @@ public class Conway {
         return getTotal();
     }
 
+    public void printTotal(NewCell cell){
+        System.out.println("Print total Alive Neighbours : ");
+        for (int i = 0;i<cell.getLength();i++){
+            for (int j = 0;j<cell.getWidth();j++){
+                System.out.print(cell.getArrayBasedIndex(i, j) + " ");
+            }
+            System.out.println("");
+        }
+    }
+
     public int[][] getNextCellAlive(NewCell cell){
         for (int i = 0;i<cell.getLength();i++){
             for (int j = 0;j<cell.getWidth();j++){
@@ -57,11 +67,16 @@ public class Conway {
         return cell.getAnswer();
     }
 
-//    public void getLifeCellForTurn(NewCell cell){
-//        for (int i = 0;i<getTurn();i++){
-//
-//        }
-//    }
+    public void getLifeCellForTurn(NewCell cell){
+        cell.printArray();
+        System.out.println("Print Answer for the next" + getTurn() + " turn");
+        for (int i = 0;i<getTurn();i++){
+            cekAliveTotal(cell);
+            printTotal(cell);
+            cell.setArray(getNextCellAlive(cell));
+            cell.printAnswer();
+        }
+    }
 
     public int[][] getTotal() {
         return this.total;

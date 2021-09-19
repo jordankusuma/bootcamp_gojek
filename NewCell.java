@@ -40,6 +40,26 @@ public class NewCell {
         return total;
     }
 
+    public void printArray(){
+        System.out.println("Print Array input : ");
+        for (int i = 0;i<getLength();i++){
+            for (int j = 0;j<getWidth();j++){
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+
+    public void printAnswer(){
+        System.out.println("Print Answer array : ");
+        for (int i = 0;i<getLength();i++){
+            for (int j = 0;j<getWidth();j++){
+                System.out.print(answer[i][j] + " ");
+            }
+            System.out.println("");
+        }
+    }
+
     public int getLength() {
         return length;
     }
@@ -54,6 +74,10 @@ public class NewCell {
 
     public void setWidth(int width) {
         this.width = width;
+    }
+
+    public void setArray(int[][] array) {
+        this.array = array;
     }
 
     public int[][] getArray() {
