@@ -40,9 +40,9 @@ public class NewCell {
         return total;
     }
 
-    public int getNextCell(){
-
-    }
+//    public int getNextCell(){
+//
+//    }
 
     public int getLength() {
         return length;
