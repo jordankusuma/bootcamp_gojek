@@ -5,14 +5,12 @@ public class NewCell {
     private int width;
     private int[][] array;
     private int[][] answer;
-    private int[][] total;
 
     public NewCell(int length, int width){
         this.length = length;
         this.width = width;
         this.array = new int[length][width];
         this.answer = new int[length][width];
-        this.total = new int[length][width];
     }
 
     public boolean getStatusCell(int number){
@@ -31,23 +29,13 @@ public class NewCell {
             length += i;
             for (int j = -1;j<=1;j++) {
                 width += j;
-                System.out.print(length);
-                System.out.print(width);
-                System.out.println("");
-                //System.out.println("Array" + this.array[length][width]);
                 if (length < this.length && width < this.width && length >= 0 && width >= 0) {
-                      System.out.print(length);
-                      System.out.print(width);
-                      System.out.println("Array" + this.array[length][width]);
-                    if (getStatusCell(this.array[length][width])) {
-                        if (length != originLength || width != originWidth)
-                            total++;
-                    }
+                    if (getStatusCell(this.array[length][width]) && (length != originLength || width != originWidth))
+                        total++;
                 }
                 width = originWidth;
             }
             length = originLength;
-            System.out.println("");
         }
         return total;
     }
@@ -82,13 +70,5 @@ public class NewCell {
 
     public void setAnswerwithIndex(int posX, int posY, int value) {
         this.answer[posX][posY] = value;
-    }
-
-    public void setTotalwithIndex(int posX, int posY, int value) {
-        this.total[posX][posY] = value;
-    }
-
-    public int[][] getTotal() {
-        return this.total;
     }
 }

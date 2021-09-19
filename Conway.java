@@ -2,8 +2,6 @@ package com.company;
 import java.util.Scanner;
 
 public class Conway {
-    private NewCell[][] array;
-    private NewCell[][] answer;
     private int[][] total;
     private int turn;
 
@@ -37,11 +35,22 @@ public class Conway {
     public int[][] cekAliveTotal(NewCell cell){
         for (int i = 0;i<cell.getLength();i++){
             for (int j = 0;j<cell.getWidth();j++){
-                cell.setTotalwithIndex(i, j, cell.checkAliveCells(i, j));
-                //total[i][j] = cells.checkAliveCells(i, j);
+                total[i][j] = cell.checkAliveCells(i, j);
             }
         }
-        return cell.getTotal();
+        return total;
     }
 
+    public void getNextCell(){
+
+    }
+
+//    public void getNextCell(){
+//        for (int i = 0;i<total.length;i++){
+//            for (int j = 0;j<total.length;j++){
+//                System.out.print(total[i][j] + " ");
+//            }
+//            System.out.println("");
+//        }
+//    }
 }
