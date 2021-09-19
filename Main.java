@@ -22,7 +22,7 @@ public class Main {
 
         System.out.println("");
 
-        total = conway.cekAliveTotal(cell);
+        total = conway.cekAliveTotal(cell, conway);
 
 //        for (int i = 0;i<cell.getLength();i++){
 //            for (int j = 0;j<cell.getWidth();j++){

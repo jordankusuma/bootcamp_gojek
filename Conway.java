@@ -6,8 +6,6 @@ public class Conway {
     private int turn;
 
     public Conway(NewCell cell, int turn){
-        NewCell[][] array = new NewCell[cell.getLength()][cell.getWidth()];
-        NewCell[][] answer = new NewCell[cell.getLength()][cell.getWidth()];
         int[][] total = new int[cell.getLength()][cell.getWidth()];
         this.turn = turn;
     }
@@ -32,25 +30,28 @@ public class Conway {
         return cell.getArray();
     }
 
-    public int[][] cekAliveTotal(NewCell cell){
+    public int[][] cekAliveTotal(NewCell cell, Conway conway){
         for (int i = 0;i<cell.getLength();i++){
             for (int j = 0;j<cell.getWidth();j++){
-                total[i][j] = cell.checkAliveCells(i, j);
+                conway.setTotalwithIndex(i, j, cell.checkAliveCells(i, j));
             }
         }
-        return total;
+        return conway.getTotal();
     }
 
-    public void getNextCell(){
-
+    public int[][] getTotal() {
+        return this.total;
     }
 
-//    public void getNextCell(){
-//        for (int i = 0;i<total.length;i++){
-//            for (int j = 0;j<total.length;j++){
-//                System.out.print(total[i][j] + " ");
-//            }
-//            System.out.println("");
-//        }
-//    }
+    public void setTotalwithIndex(int posX, int posY, int value) {
+        this.total[posX][posY] = value;
+    }
+
+    public int getTurn() {
+        return turn;
+    }
+
+    public void setTurn(int turn) {
+        this.turn = turn;
+    }
 }
