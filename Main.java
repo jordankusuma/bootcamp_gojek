@@ -22,14 +22,14 @@ public class Main {
 
         System.out.println("");
 
-        total = conway.cekAliveTotal(cell, conway);
+        total = conway.cekAliveTotal(cell);
 
-//        for (int i = 0;i<cell.getLength();i++){
-//            for (int j = 0;j<cell.getWidth();j++){
-//                System.out.print(total[i][j] + " ");
-//            }
-//            System.out.println("");
-//        }
+        for (int i = 0;i<cell.getLength();i++){
+            for (int j = 0;j<cell.getWidth();j++){
+                System.out.print(total[i][j] + " ");
+            }
+            System.out.println("");
+        }
 
     }
 }

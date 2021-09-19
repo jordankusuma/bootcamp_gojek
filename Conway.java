@@ -30,25 +30,41 @@ public class Conway {
         return cell.getArray();
     }
 
-    public int[][] cekAliveTotal(NewCell cell, Conway conway){
+    public int[][] cekAliveTotal(NewCell cell){
+        int[][] number = new int[cell.getLength()][cell.getWidth()];
         for (int i = 0;i<cell.getLength();i++){
             for (int j = 0;j<cell.getWidth();j++){
-                conway.setTotalwithIndex(i, j, cell.checkAliveCells(i, j));
+                number[i][j] = cell.checkAliveCells(i, j);
             }
         }
-        return conway.getTotal();
+        setTotal(number);
+        return getTotal();
+    }
+
+    public int[][] getNextCellAlive(NewCell cell){
+        for (int i = 0;i<cell.getLength();i++){
+            for (int j = 0;j<cell.getWidth();j++){
+
+            }
+        }
+    }
+
+    public void getLifeCellForTurn(NewCell cell){
+        for (int i = 0;i<getTurn();i++){
+
+        }
     }
 
     public int[][] getTotal() {
         return this.total;
     }
 
-    public int getTotalwithIndex(int posX, int posY){
+    public int getTotalBasedIndex(int posX, int posY){
         return this.total[posX][posY];
     }
 
-    public void setTotalwithIndex(int posX, int posY, int value) {
-        this.total[posX][posY] = value;
+    public void setTotal(int[][] value) {
+        this.total = value;
     }
 
     public int getTurn() {
