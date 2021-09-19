@@ -24,19 +24,24 @@ public class Conway {
                     System.out.println("Enter numbers again: ");
                     input = sc.nextInt();
                 }
-                array[i][j].setArraywithIndex(i, j, input);
+                cell.setArraywithIndex(i, j, input);
             }
             System.out.println("");
         }
     }
 
+    public int[][] getArrayCells(NewCell cell){
+        return cell.getArray();
+    }
+
     public int[][] cekAliveTotal(NewCell cell){
         for (int i = 0;i<cell.getLength();i++){
             for (int j = 0;j<cell.getWidth();j++){
-                total[i][j] = array[i][j].checkAliveCells(i, j);
+                cell.setTotalwithIndex(i, j, cell.checkAliveCells(i, j));
+                //total[i][j] = cells.checkAliveCells(i, j);
             }
         }
-        return total;
+        return cell.getTotal();
     }
 
 }
